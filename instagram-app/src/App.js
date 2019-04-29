@@ -8,6 +8,9 @@ function App() {
   return (
     <div className="App">
       {dummyData.map(data => <PostContainer data={data}/>)}
+      <form>
+              <input placeholder="...comment"/>
+            </form>
     </div>
   );
 }

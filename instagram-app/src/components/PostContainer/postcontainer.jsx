@@ -5,6 +5,7 @@ const PostContainer = props => {
     return(
         <div>
             <CommentSection comments={props.data.comments} />
+            
         </div>
     )
 }
