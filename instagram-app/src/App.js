@@ -5,15 +5,28 @@ import dummyData from './dummy-data';
 import PostContainer from './components/PostContainer/postcontainer';
 import SearchBar from './components/SearchBar/searchbar'
 
-function App() {
-  return (
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      data: []
+    }
+  }
+
+  componentDidMount(){
+    this.setState({data: dummyData})
+  }
+
+
+  render(){
+    return (
     <section className="App">
 
       <SearchBar />
 
       <main className="main-cont">
       <section className="main-sec">
-        {dummyData.map(data => <PostContainer data={data} />)}
+        {this.state.data.map(data => <PostContainer data={data} />)}
       </section>
         
       </main>
@@ -21,6 +34,8 @@ function App() {
 
     </section>
   );
+  }
+  
 }
 
 export default App;
