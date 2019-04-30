@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'proptypes';
-import './commentsection.css'
+import './commentsection.css';
 
 const Comment = props => {
     return (
@@ -11,7 +11,7 @@ const Comment = props => {
     )
 }
 
-Comment.propType = {
+Comment.propTypes = {
     username: PropTypes.string,
     comment: PropTypes.string
 }
