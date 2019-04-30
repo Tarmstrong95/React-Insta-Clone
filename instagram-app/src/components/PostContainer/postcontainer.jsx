@@ -3,45 +3,36 @@ import CommentSection from '../CommentSection/commentsection'
 import './postContainer.css'
 import PropTypes from 'proptypes'
 
-const PostContainer = props => {
-    return (
-        <article className="post-art">
-            <div className="post-cont">
-                <header className="post-header">
-                    <div className="user-img-cont"><img className="user-img" src={props.data.thumbnailUrl} /></div>
-                    <span className="post-username-cont"><h1>{props.data.username}</h1></span>
-                </header>
-                <div className="post-img-cont">
-                    <img src={props.data.imageUrl} />
-                </div>
-                <div className="post-com-cont">
-                    <section className="post-icon-sec">
-                        <span><img src="#" /></span>
-                        <span><img src="#" /></span>
-                    </section>
-                    <section>
-                        <p>{props.data.likes} likes</p>
-                    </section>
-                    <div>
-                        <CommentSection comments={props.data.comments} />
+class PostContainer extends React.Component {
+   
+
+    render() {
+        return (
+            <article className="post-art">
+                <div className="post-cont">
+                    <header className="post-header">
+                        <div className="user-img-cont"><img alt="" className="user-img" src={this.props.data.thumbnailUrl} /></div>
+                        <span className="post-username-cont"><h1>{this.props.data.username}</h1></span>
+                    </header>
+                    <div className="post-img-cont">
+                        <img src={this.props.data.imageUrl} alt=""/>
                     </div>
-                    {/* <div>
-                    <p>{Date.now()}</p>
-                </div> */}
+                    <div className="post-com-cont">
+                        <section className="post-icon-sec">
+                            <span><img alt="" src="#" /></span>
+                            <span><img alt="" src="#" /></span>
+                        </section>
+                        <section>
+                            <p>{this.props.data.likes} likes</p>
+                        </section>
+                        <div>
+                            <CommentSection comments={this.props.data.comments} />
+                        </div>
+                    </div>
                 </div>
-
-
-
-            </div>
-            <div className="form-cont">
-                <form className="form-main">
-                    <input placeholder="Add a comment..." />
-                    <button>Post</button>
-                </form>
-            </div>
-
-        </article>
-    )
+            </article>
+        )
+    }
 }
 
 

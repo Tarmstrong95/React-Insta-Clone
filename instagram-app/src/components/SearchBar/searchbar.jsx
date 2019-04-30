@@ -5,16 +5,16 @@ const SearchBar = (props) => {
     return(
         <div className="nav">
             <div>
-                <img src="#"/>
-                <img src="#"/>
+                <img alt="" src="#"/>
+                <img alt="" src="#"/>
             </div>
             <form>
                 <input placeholder="Search"/>
             </form>
             <div>
-                <img src="#"/>
-                <img src="#"/>
-                <img src="#"/>
+                <img alt=""  src="#"/>
+                <img alt="" src="#"/>
+                <img alt="" src="#"/>
             </div>
         </div>
     )

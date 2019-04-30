@@ -1,41 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import dummyData from './dummy-data';
 import PostContainer from './components/PostContainer/postcontainer';
 import SearchBar from './components/SearchBar/searchbar'
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       data: []
     }
   }
 
-  componentDidMount(){
-    this.setState({data: dummyData})
+  componentDidMount() {
+    this.setState({ data: dummyData })
   }
 
-
-  render(){
+  render() {
     return (
-    <section className="App">
+      <section className="App">
 
-      <SearchBar />
+        <SearchBar />
 
-      <main className="main-cont">
-      <section className="main-sec">
-        {this.state.data.map(data => <PostContainer data={data} />)}
+        <main className="main-cont">
+          <section className="main-sec">
+            {this.state.data.map((data, i) =>
+              <PostContainer key={Date.now + i} data={data}/>)}
+          </section>
+
+        </main>
+
+
       </section>
-        
-      </main>
-
-
-    </section>
-  );
+    );
   }
-  
+
 }
 
 export default App;
