@@ -2,16 +2,24 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import dummyData from './dummy-data';
-import PostContainer from './components/PostContainer/postcontainer'
+import PostContainer from './components/PostContainer/postcontainer';
+import SearchBar from './components/SearchBar/searchbar'
 
 function App() {
   return (
-    <div className="App">
-      {dummyData.map(data => <PostContainer data={data}/>)}
-      <form>
-              <input placeholder="...comment"/>
-            </form>
-    </div>
+    <section className="App">
+
+      <SearchBar />
+
+      <main className="main-cont">
+      <section className="main-sec">
+        {dummyData.map(data => <PostContainer data={data} />)}
+      </section>
+        
+      </main>
+
+
+    </section>
   );
 }
 
