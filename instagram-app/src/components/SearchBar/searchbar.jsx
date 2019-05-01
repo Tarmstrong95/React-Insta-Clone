@@ -9,7 +9,7 @@ const SearchBar = (props) => {
                 <img alt="" src="#"/>
             </div>
             <form>
-                <input placeholder="Search"/>
+                <input onChange={props.search} placeholder="Search"/>
             </form>
             <div>
                 <img alt=""  src="#"/>

@@ -8,19 +8,30 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: []
+      data: [], 
+      filteredData: []
     }
   }
 
   componentDidMount() {
-    this.setState({ data: dummyData })
+    this.setState({ data: dummyData, filteredData: dummyData })
+  }
+
+  search=(e)=>{
+  
+    this.setState({
+      data: this.state.filteredData.filter(item => {
+        return item.username.includes(e.target.value)
+      }),
+      filteredData: dummyData
+    })
   }
 
   render() {
     return (
       <section className="App">
 
-        <SearchBar />
+        <SearchBar search={this.search} data={this.state.data}/>
 
         <main className="main-cont">
           <section className="main-sec">
