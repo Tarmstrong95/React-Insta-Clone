@@ -23,7 +23,7 @@ class CommentSection extends React.Component {
     changeUpdate = (e) => {
         this.setState({
             comment: {
-                username: "King Neptune",
+                username: localStorage.getItem('username'),
                 text: e.target.value
             }
         })
