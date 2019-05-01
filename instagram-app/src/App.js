@@ -22,8 +22,7 @@ class App extends React.Component {
     this.setState({
       data: this.state.filteredData.filter(item => {
         return item.username.includes(e.target.value)
-      }),
-      filteredData: dummyData
+      })
     })
   }
 
