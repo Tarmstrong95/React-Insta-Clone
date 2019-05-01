@@ -2,19 +2,19 @@ import React from 'react';
 import './searchbar.css';
 
 const SearchBar = (props) => {
-    return(
+    return (
         <div className="nav">
             <div>
-                <img alt="" src="#"/>
-                <img alt="" src="#"/>
+                <img alt="" src="#" />
+                <img alt="" src="#" />
             </div>
             <form>
-                <input onChange={props.search} placeholder="Search"/>
+                <input onChange={props.search} placeholder="Search" />
             </form>
             <div>
-                <img alt=""  src="#"/>
-                <img alt="" src="#"/>
-                <img alt="" src="#"/>
+                <img alt="" src="#" />
+                <img alt="" src="#" />
+                <img alt="" src="#" />
             </div>
         </div>
     )

@@ -7,25 +7,25 @@ import { faHeart, faComment } from '@fortawesome/free-regular-svg-icons'
 
 
 class PostContainer extends React.Component {
-    state= {
+    state = {
         likes: this.props.data.likes,
         incrimented: false
     }
-   
-incrimentLikes = () => {
-    if(!this.state.incrimented){
-        this.setState({
-        likes: this.state.likes + 1,
-        incrimented: true
-    })
-    }else{
-        this.setState({
-            likes: this.state.likes - 1,
-            incrimented: false
-        })
+
+    incrimentLikes = () => {
+        if (!this.state.incrimented) {
+            this.setState({
+                likes: this.state.likes + 1,
+                incrimented: true
+            })
+        } else {
+            this.setState({
+                likes: this.state.likes - 1,
+                incrimented: false
+            })
+        }
+
     }
-    
-}
 
 
     render() {
@@ -33,16 +33,16 @@ incrimentLikes = () => {
             <article className="post-art">
                 <div className="post-cont">
                     <header className="post-header">
-                        <div className="user-img-cont"><img src={this.props.data.thumbnailUrl}/></div>
+                        <div className="user-img-cont"><img src={this.props.data.thumbnailUrl} /></div>
                         <span className="post-username-cont"><h1>{this.props.data.username}</h1></span>
                     </header>
                     <div className="post-img-cont">
-                        <img src={this.props.data.imageUrl} alt=""/>
+                        <img src={this.props.data.imageUrl} alt="" />
                     </div>
                     <div className="post-com-cont">
                         <section className="post-icon-sec">
-                        <FontAwesomeIcon icon={faHeart} onClick={this.incrimentLikes}/>
-                        <FontAwesomeIcon icon={faComment}/>
+                            <FontAwesomeIcon icon={faHeart} onClick={this.incrimentLikes} />
+                            <FontAwesomeIcon icon={faComment} />
                         </section>
                         <section>
                             <p>{this.state.likes} likes</p>

@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: [], 
+      data: [],
       filteredData: []
     }
   }
@@ -17,8 +17,7 @@ class App extends React.Component {
     this.setState({ data: dummyData, filteredData: dummyData })
   }
 
-  search=(e)=>{
-  
+  search = (e) => {
     this.setState({
       data: this.state.filteredData.filter(item => {
         return item.username.includes(e.target.value)
@@ -29,22 +28,16 @@ class App extends React.Component {
   render() {
     return (
       <section className="App">
-
-        <SearchBar search={this.search} data={this.state.data}/>
-
+        <SearchBar search={this.search} data={this.state.data} />
         <main className="main-cont">
           <section className="main-sec">
             {this.state.data.map((data, i) =>
-              <PostContainer key={Date.now + i} data={data}/>)}
+              <PostContainer key={Date.now + i} data={data} />)}
           </section>
-
         </main>
-
-
       </section>
     );
   }
-
 }
 
 export default App;

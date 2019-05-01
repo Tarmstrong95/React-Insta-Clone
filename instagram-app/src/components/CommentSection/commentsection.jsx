@@ -8,13 +8,13 @@ class CommentSection extends React.Component {
         this.state = {
             comments: [],
             comment: {
-                username: '', 
+                username: '',
                 text: ''
             }
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.setState({
             comments: this.props.comments
         })
@@ -44,7 +44,7 @@ class CommentSection extends React.Component {
             <div>
                 {this.state.comments.map((comment, i) =>
                     (
-                        <Comment key={Date.now + i}username={comment.username} comment={comment.text} />
+                        <Comment key={Date.now + i} username={comment.username} comment={comment.text} />
                     ))}
 
                 <div className="form-cont">
