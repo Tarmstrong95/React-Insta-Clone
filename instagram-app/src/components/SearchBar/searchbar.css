@@ -8,3 +8,37 @@
     margin: auto;
     border-bottom: 1px solid rgba(0,0,0,.0975);
 }
+.camera{
+    background-image: url(../../Icons/instagram-line-icon.png);
+}
+.name{
+    background-image: url(../../Icons/instagram.png);
+    width: 103px;
+    height: 29px;
+    background-repeat: no-repeat;
+}
+.icon-cont{
+    display: flex;
+    justify-content: space-between;
+}
+.compass{
+    background-image: url(../../Icons/instagram-line-compass.png);
+}
+.heart{
+    background-image: url(../../Icons/instagram-line-heart.png);
+}
+.person{
+    background-image: url(../../Icons/instagram-line-person.png);
+}
+.sm-ico{
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+}
+.search-inp{
+    border-radius: 4px;
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.377);
+    margin: auto;
+}

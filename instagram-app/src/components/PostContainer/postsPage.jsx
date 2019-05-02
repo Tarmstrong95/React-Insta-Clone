@@ -18,29 +18,23 @@ class PostsPage extends React.Component {
 
   search = (e) => {
     const newArr = this.state.filteredData.filter(item => {
-        return item.username.includes(e.target.value)
-      })
-      this.setState({
-        data: newArr
-      })
+      return item.username.includes(e.target.value)
+    })
+    this.setState({
+      data: newArr
+    })
   }
 
   submitComment = (x, y) => {
-    let newObj = this.state.data.filter(item => item.timestamp===y)
-    newObj[0].comments = [...newObj[0].comments, x]
     let index;
-    this.state.data.forEach((item, i) => {
-      if(item.timestamp === y) return index = i
-    })
-    this.setState({
-      [this.state.data[index]]: newObj[0]
-    })
-    console.log(index)
-    
-}
+    let newObj = this.state.data.filter(item => item.timestamp === y)
+    newObj[0].comments = [...newObj[0].comments, x]
+    this.state.data.forEach((item, i) => {if (item.timestamp === y) return index = i})
+    this.setState({[this.state.data[index]]: newObj[0]})
+  }
 
   render() {
-    
+
     return (
       <section className="App">
         <SearchBar search={this.search} data={this.state.data} />

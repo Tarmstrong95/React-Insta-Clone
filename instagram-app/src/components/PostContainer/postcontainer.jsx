@@ -33,7 +33,7 @@ class PostContainer extends React.Component {
             <article className="post-art">
                 <div className="post-cont">
                     <header className="post-header">
-                        <div className="user-img-cont"><img src={this.props.data.thumbnailUrl} /></div>
+                        <div className="user-img-cont"><img src={this.props.data.thumbnailUrl} alt=""/></div>
                         <span className="post-username-cont"><h1>{this.props.data.username}</h1></span>
                     </header>
                     <div className="post-img-cont">
@@ -41,8 +41,8 @@ class PostContainer extends React.Component {
                     </div>
                     <div className="post-com-cont">
                         <section className="post-icon-sec">
-                            <FontAwesomeIcon icon={faHeart} onClick={this.incrimentLikes} />
-                            <FontAwesomeIcon icon={faComment} />
+                            <span className="icons"><FontAwesomeIcon icon={faHeart} onClick={this.incrimentLikes} size="2x"/></span>
+                            <span className="icons"><FontAwesomeIcon icon={faComment} size="2x"/></span>
                         </section>
                         <section>
                             <p>{this.state.likes} likes</p>

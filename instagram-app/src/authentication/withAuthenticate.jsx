@@ -11,7 +11,6 @@ class extends React.Component {
         this.setState({loggedIn: false})
     }
     render(){
-        console.log(this.state)
            if(!this.state.loggedIn){
                return <LoginPage />
            }else {

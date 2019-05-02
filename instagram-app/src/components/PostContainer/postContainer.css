@@ -36,9 +36,7 @@
 .post-img-cont img{
     width: 100%;
 }
-.post-icon-sec {
-    padding: 0 16px;
-}
+
 .post-com-cont{
     padding: 0 16px;
 }
@@ -61,4 +59,8 @@ margin: 0;
 }
 .form-main button{
     border: none;
+    }
+    
+    .icons{
+        margin: 10px;
     }

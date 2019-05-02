@@ -12,7 +12,7 @@ class CommentSection extends React.Component {
             }
         }
     }
-    
+
     changeUpdate = (e) => {
         this.setState({
             comment: {
@@ -25,6 +25,12 @@ class CommentSection extends React.Component {
     submit = e => {
         e.preventDefault();
         this.props.submitComment(this.state.comment, this.props.id);
+        this.setState({
+            comment: {
+                username: '',
+                text: ''
+            }
+        })
     }
 
     render() {
