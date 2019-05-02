@@ -48,7 +48,7 @@ class PostContainer extends React.Component {
                             <p>{this.state.likes} likes</p>
                         </section>
                         <div>
-                            <CommentSection comments={this.props.data.comments} />
+                            <CommentSection submitComment={this.props.submitComment} id={this.props.id} comments={this.props.data.comments} />
                         </div>
                     </div>
                 </div>

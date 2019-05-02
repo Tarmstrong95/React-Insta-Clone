@@ -6,20 +6,13 @@ class CommentSection extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            comments: [],
             comment: {
                 username: '',
                 text: ''
             }
         }
     }
-
-    componentDidMount() {
-        this.setState({
-            comments: this.props.comments
-        })
-    }
-
+    
     changeUpdate = (e) => {
         this.setState({
             comment: {
@@ -29,26 +22,21 @@ class CommentSection extends React.Component {
         })
     }
 
-    submitComment = (e) => {
+    submit = e => {
         e.preventDefault();
-        this.setState({
-            comments: [...this.state.comments, this.state.comment],
-            comment: {
-                username: '',
-                text: ''
-            }
-        })
+        this.props.submitComment(this.state.comment, this.props.id);
     }
+
     render() {
         return (
             <div>
-                {this.state.comments.map((comment, i) =>
+                {this.props.comments.map((comment, i) =>
                     (
                         <Comment key={Date.now + i} username={comment.username} comment={comment.text} />
                     ))}
 
                 <div className="form-cont">
-                    <form onSubmit={this.submitComment} className="form-main">
+                    <form onSubmit={this.submit} className="form-main">
                         <input
                             onChange={this.changeUpdate}
                             value={this.state.comment.text}
