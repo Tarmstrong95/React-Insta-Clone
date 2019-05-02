@@ -1,6 +1,6 @@
 import React from 'react';
 import CommentSection from '../CommentSection/commentsection'
-import './postContainer.css'
+// import './postContainer.css'
 import PropTypes from 'proptypes'
 
 

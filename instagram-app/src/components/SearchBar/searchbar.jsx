@@ -1,9 +1,10 @@
 import React from 'react';
 import './searchbar.css';
+import {Nav} from '../styledComponents/styledComponents';
 
 const SearchBar = (props) => {
     return (
-        <div className="nav">
+        <Nav>
             <div className="icon-cont">
                 <div className="camera sm-ico"/>
                 <div className="name"/>
@@ -16,7 +17,7 @@ const SearchBar = (props) => {
                 <div className="heart sm-ico"  />
                 <div className="person sm-ico"  />
             </div>
-        </div>
+        </Nav>
     )
 }
 
