@@ -1,90 +1,31 @@
 
-.post-art{
-    border: 1px solid rgba(0, 0, 0, 0.144);
-    margin-bottom: 60px;
-}
-.post-cont {
-    max-width: 614px;
-    width: 100%;
-}
-.post-header{
-    height: 60px;
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-}
 .user-img{
     height: 100%;
     width: 100%;
 }
-.user-img-cont{
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    overflow: hidden;
-    top: -5px;
-    left: -5px;
-}
-.post-icon-sec{
-    display: flex;
-}
-.post-username-cont{
-    margin-left: 5px;
-}
-.post-img-cont{
-    box-sizing: border-box;
-    width: 100%;
-}
-.post-img-cont img{
-    width: 100%;
-}
+
 
 .post-com-cont{
     padding: 0 16px;
 }
 
-.form-cont{
-    width: 100%;
-    border-top: 1px solid rgba(0, 0, 0, 0.137);
-    padding: 20px 0;
-}
-.form-main{
-display: flex;
-width: 100%;
-margin: 0;
-}
-.form-main input{
-    border: none;
-    flex: 4;
-    border-right: 1px solid rgba(0, 0, 0, 0.123);
-    padding-left: 16px;
-    font-size: 1.2rem;
-}
-.form-main input:focus {
-    outline: none;
-}
-.form-main button{
-    border: none;
-    font-size: 1.2rem;
-    }
+.heartlike{
+    background-image: url(../../Icons/instagram-line-heart.png);
     
-    .icons{
-        margin: 10px;
-    }
-    .heart_red {
-        background-image: url(../../Icons/instagram-line-heart-fill.png)
-    }
-
-    .commentico{
-        background-image: url(../../Icons/instagram-line-comment.png);
-    }
-    .sm-ico{
-        width: 24px;
-        height: 24px;
-        background-repeat: no-repeat;
-        margin-right: 20px;
-    }
-    .mtop{
-        margin-top: 10px;
-    }
+}
+.icons{
+    margin: 10px;
+}
+.heart_red {
+    background-image: url(../../Icons/instagram-line-heart-fill.png)
+}
+.smIcon{
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    margin-right: 20px;  
+}
+.comment{
+    font-weight: 100;
+    
+}

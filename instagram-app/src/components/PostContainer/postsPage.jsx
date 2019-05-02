@@ -2,6 +2,7 @@ import React from 'react';
 import dummyData from '../../dummy-data';
 import PostContainer from './postcontainer';
 import SearchBar from '../SearchBar/searchbar'
+import {App, MainCont, MainSec} from '../styledComponents/styledComponents';
 
 class PostsPage extends React.Component {
   constructor() {
@@ -47,33 +48,22 @@ likeable = (timestamp, bool) => {
 
   inc = obj => {
     return (obj[0].likes = obj[0].likes + 1);
-    // let index;
-    // let newObj = this.state.data.filter(item => item.timestamp === timestamp);
-    // newObj[0].likes = newObj[0].likes + 1;
-    // this.state.data.forEach((item, i) => { if (item.timestamp === timestamp) return index = i })
-    // this.setState({ [this.state.data[index]]: newObj[0] })
   }
   dec = obj => {
     return (obj[0].likes = obj[0].likes - 1);
-    // let index;
-    // let newObj = this.state.data.filter(item => item.timestamp === timestamp);
-    // newObj[0].likes = newObj[0].likes - 1;
-    // this.state.data.forEach((item, i) => { if (item.timestamp === timestamp) return index = i })
-    // this.setState({ [this.state.data[index]]: newObj[0] })
   }
 
   render() {
-
     return (
-      <section className="App">
+      <App>
         <SearchBar search={this.search} data={this.state.data} />
-        <main className="main-cont">
-          <section className="main-sec">
+        <MainCont>
+          <MainSec>
             {this.state.data.map((data, i) =>
               <PostContainer likeable={this.likeable} submitComment={this.submitComment} key={data.timestamp} id={data.timestamp} data={data} />)}
-          </section>
-        </main>
-      </section>
+          </MainSec>
+        </MainCont>
+      </App>
     );
   }
 }

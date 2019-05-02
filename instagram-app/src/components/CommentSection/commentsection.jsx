@@ -1,6 +1,8 @@
 import React from 'react';
 import Comment from './comment';
 import PropTypes from 'proptypes';
+import { FormCont, FormMainInput, FormMain, FormMainButton } 
+    from '../styledComponents/styledComponents';
 
 class CommentSection extends React.Component {
     constructor(props) {
@@ -41,16 +43,16 @@ class CommentSection extends React.Component {
                         <Comment key={Date.now + i} username={comment.username} comment={comment.text} />
                     ))}
 
-                <div className="form-cont">
-                    <form onSubmit={this.submit} className="form-main">
-                        <input
+                <FormCont>
+                    <FormMain onSubmit={this.submit}>
+                        <FormMainInput
                             onChange={this.changeUpdate}
                             value={this.state.comment.text}
                             type="text"
                             placeholder="Add a comment..." />
-                        <button>Post</button>
-                    </form>
-                </div>
+                        <FormMainButton>Post</FormMainButton>
+                    </FormMain>
+                </FormCont>
             </div>
         )
     }

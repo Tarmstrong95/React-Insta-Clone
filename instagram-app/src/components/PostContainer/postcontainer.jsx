@@ -1,8 +1,18 @@
 import React from 'react';
 import CommentSection from '../CommentSection/commentsection'
-// import './postContainer.css'
 import PropTypes from 'proptypes'
-
+import './postContainer.css'
+import {PostArticle,
+     PostCont, 
+     PostHeader, 
+     UserImgCont, 
+     PostusernameCont,
+     PostImgCont,
+     PostImg,
+     PostCommCont,
+     PostIconSec,
+     SmIcon} 
+     from '../styledComponents/styledComponents';
 
 class PostContainer extends React.Component {
     state = {
@@ -14,7 +24,7 @@ class PostContainer extends React.Component {
             this.setState({
                 incrimented: true
             })
-            e.target.classList.remove('heart');
+            e.target.classList.remove('heartlike')
             e.target.classList.add('heart_red');
             this.props.likeable(this.props.data.timestamp, this.state.incrimented);
         } else {
@@ -22,36 +32,40 @@ class PostContainer extends React.Component {
                 incrimented: false
             })
             e.target.classList.remove('heart_red');
-            e.target.classList.add('heart');
+            e.target.classList.add('heartlike');
             this.props.likeable(this.props.data.timestamp, this.state.incrimented);
         }
     }
 
     render() {
         return (
-            <article className="post-art">
-                <div className="post-cont">
-                    <header className="post-header">
-                        <div className="user-img-cont"><img src={this.props.data.thumbnailUrl} alt="" /></div>
-                        <span className="post-username-cont"><h1>{this.props.data.username}</h1></span>
-                    </header>
-                    <div className="post-img-cont">
-                        <img src={this.props.data.imageUrl} alt="" />
-                    </div>
-                    <div className="post-com-cont">
-                        <section className="post-icon-sec">
-                            <div onClick={this.clicker} className='heart sm-ico mtop' />
-                            <div className="commentico sm-ico mtop" />
-                        </section>
+            <PostArticle >
+                <PostCont>
+                    <PostHeader>
+                        <UserImgCont>
+                            <img src={this.props.data.thumbnailUrl} alt="" />
+                        </UserImgCont>
+                        <PostusernameCont>
+                            <h1>{this.props.data.username}</h1>
+                        </PostusernameCont>
+                    </PostHeader>
+                    <PostImgCont>
+                        <PostImg src={this.props.data.imageUrl} alt="" />
+                    </PostImgCont>
+                    <PostCommCont>
+                        <PostIconSec>
+                            <div onClick={this.clicker} className="smIcon heartlike"/>
+                            <SmIcon comment/>
+                        </PostIconSec>
                         <section>
                             <p>{this.props.data.likes} likes</p>
                         </section>
                         <div>
                             <CommentSection submitComment={this.props.submitComment} id={this.props.id} comments={this.props.data.comments} />
                         </div>
-                    </div>
-                </div>
-            </article>
+                    </PostCommCont>
+                </PostCont>
+            </PostArticle>
         )
     }
 }

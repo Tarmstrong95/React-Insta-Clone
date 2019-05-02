@@ -1,4 +1,6 @@
 import React from 'react';
+import { LoginForm, Search, FormMainButton } 
+    from '../styledComponents/styledComponents';
 
 class Login extends React.Component {
     state = {
@@ -25,15 +27,15 @@ class Login extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.login}>
-                <input 
+            <LoginForm onSubmit={this.login}>
+                <Search 
                 name="username" 
                 onChange={this.handleChange} 
                 placeholder="Username" 
                 value={this.state.username} 
                 required 
                 />
-                <input 
+                <Search 
                 name="password" 
                 onChange={this.handleChange} 
                 placeholder="Password" 
@@ -41,7 +43,7 @@ class Login extends React.Component {
                 required 
                 />
                 <button>Login</button>
-            </form>
+            </LoginForm>
 
         )
     }
