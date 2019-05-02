@@ -9,7 +9,6 @@ class PostsPage extends React.Component {
     this.state = {
       data: [],
       filteredData: [],
-      incrimented: false
     }
   }
 
@@ -32,28 +31,36 @@ class PostsPage extends React.Component {
     let index;
     let newObj = this.state.data.filter(item => item.timestamp === y)
     newObj[0].comments = [...newObj[0].comments, x]
-    this.state.data.forEach((item, i) => {if (item.timestamp === y) return index = i})
-    this.setState({[this.state.data[index]]: newObj[0]})
+    this.state.data.forEach((item, i) => { if (item.timestamp === y) return index = i })
+    this.setState({ [this.state.data[index]]: newObj[0] })
   }
 
 
   //======== likes ===========
-  
-
- inc = (timestamp) => {
-    let index;
-    let newObj = this.state.data.filter(item => item.timestamp === timestamp);
-    newObj[0].likes = newObj[0].likes + 1;
-    this.state.data.forEach((item, i) => {if (item.timestamp === timestamp) return index = i})
-    this.setState({[this.state.data[index]]: newObj[0]})
- }
- dec = (timestamp) => {
+likeable = (timestamp, bool) => {
   let index;
   let newObj = this.state.data.filter(item => item.timestamp === timestamp);
-  newObj[0].likes = newObj[0].likes - 1;
-  this.state.data.forEach((item, i) => {if (item.timestamp === timestamp) return index = i})
-  this.setState({[this.state.data[index]]: newObj[0]})
- }
+  !bool ? newObj=this.inc(newObj) : newObj=this.dec(newObj)
+  this.state.data.forEach((item, i) => { if (item.timestamp === timestamp) return index = i })
+  this.setState({ [this.state.data[index]]: newObj[0] })
+}
+
+  inc = obj => {
+    return (obj[0].likes = obj[0].likes + 1);
+    // let index;
+    // let newObj = this.state.data.filter(item => item.timestamp === timestamp);
+    // newObj[0].likes = newObj[0].likes + 1;
+    // this.state.data.forEach((item, i) => { if (item.timestamp === timestamp) return index = i })
+    // this.setState({ [this.state.data[index]]: newObj[0] })
+  }
+  dec = obj => {
+    return (obj[0].likes = obj[0].likes - 1);
+    // let index;
+    // let newObj = this.state.data.filter(item => item.timestamp === timestamp);
+    // newObj[0].likes = newObj[0].likes - 1;
+    // this.state.data.forEach((item, i) => { if (item.timestamp === timestamp) return index = i })
+    // this.setState({ [this.state.data[index]]: newObj[0] })
+  }
 
   render() {
 
@@ -63,7 +70,7 @@ class PostsPage extends React.Component {
         <main className="main-cont">
           <section className="main-sec">
             {this.state.data.map((data, i) =>
-              <PostContainer inc={this.inc} dec={this.dec} submitComment={this.submitComment} key={data.timestamp} id={data.timestamp} data={data} />)}
+              <PostContainer likeable={this.likeable} submitComment={this.submitComment} key={data.timestamp} id={data.timestamp} data={data} />)}
           </section>
         </main>
       </section>

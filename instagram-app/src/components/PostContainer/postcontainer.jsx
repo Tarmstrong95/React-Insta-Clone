@@ -5,34 +5,34 @@ import PropTypes from 'proptypes'
 
 
 class PostContainer extends React.Component {
-    state={
+    state = {
         incrimented: false
     }
 
-clicker = (e) => {
-if (!this.state.incrimented) {
+    clicker = (e) => {
+        if (!this.state.incrimented) {
             this.setState({
                 incrimented: true
             })
             e.target.classList.remove('heart');
             e.target.classList.add('heart_red');
-            this.props.inc(this.props.data.timestamp);
+            this.props.likeable(this.props.data.timestamp, this.state.incrimented);
         } else {
             this.setState({
                 incrimented: false
             })
             e.target.classList.remove('heart_red');
             e.target.classList.add('heart');
-            this.props.dec(this.props.data.timestamp);
+            this.props.likeable(this.props.data.timestamp, this.state.incrimented);
         }
-}
+    }
 
     render() {
         return (
             <article className="post-art">
                 <div className="post-cont">
                     <header className="post-header">
-                        <div className="user-img-cont"><img src={this.props.data.thumbnailUrl} alt=""/></div>
+                        <div className="user-img-cont"><img src={this.props.data.thumbnailUrl} alt="" /></div>
                         <span className="post-username-cont"><h1>{this.props.data.username}</h1></span>
                     </header>
                     <div className="post-img-cont">
@@ -40,8 +40,8 @@ if (!this.state.incrimented) {
                     </div>
                     <div className="post-com-cont">
                         <section className="post-icon-sec">
-                            <div onClick={this.clicker} className="heart sm-ico mtop"/>
-                            <div className="commentico sm-ico mtop"/>
+                            <div onClick={this.clicker} className='heart sm-ico mtop' />
+                            <div className="commentico sm-ico mtop" />
                         </section>
                         <section>
                             <p>{this.props.data.likes} likes</p>
