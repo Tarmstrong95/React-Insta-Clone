@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'proptypes';
-import '../PostContainer/postContainer.css';
+import { CommentText } from '../styledComponents/styledComponents';
 
 const Comment = props => {
     return (
         <>
-            <h3>{props.username} <span className="comment">{props.comment}</span></h3>
+            <h3>{props.username} <CommentText>{props.comment}</CommentText></h3>
         </>
     )
 }

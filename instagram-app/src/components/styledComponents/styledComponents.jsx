@@ -129,6 +129,9 @@ export const FormMainInput = styled.input`
         outline: none;
     }
 `
+export const CommentText = styled.span`
+font-weight: 100;
+`
 export const FormMainButton = styled.button`
     border: none;
     font-size: 1.2rem;
@@ -143,21 +146,7 @@ align-items: center;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//dummyComponent
 const Notarealcomponent = () => {
     return (null)
 }

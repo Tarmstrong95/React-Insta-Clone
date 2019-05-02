@@ -1,14 +1,4 @@
 
-.user-img{
-    height: 100%;
-    width: 100%;
-}
-
-
-.post-com-cont{
-    padding: 0 16px;
-}
-
 .heartlike{
     background-image: url(../../Icons/instagram-line-heart.png);
     
@@ -24,8 +14,4 @@
     height: 24px;
     background-repeat: no-repeat;
     margin-right: 20px;  
-}
-.comment{
-    font-weight: 100;
-    
 }

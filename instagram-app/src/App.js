@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import PostsPage from './components/PostContainer/postsPage'
 import withAuthenticate from './authentication/withAuthenticate'
 import Login from './components/login/login'
