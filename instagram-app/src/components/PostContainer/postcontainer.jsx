@@ -2,31 +2,30 @@ import React from 'react';
 import CommentSection from '../CommentSection/commentsection'
 import './postContainer.css'
 import PropTypes from 'proptypes'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart, faComment } from '@fortawesome/free-regular-svg-icons'
 
 
 class PostContainer extends React.Component {
-    state = {
-        likes: this.props.data.likes,
+    state={
         incrimented: false
     }
 
-    incrimentLikes = () => {
-        if (!this.state.incrimented) {
+clicker = (e) => {
+if (!this.state.incrimented) {
             this.setState({
-                likes: this.state.likes + 1,
                 incrimented: true
             })
+            e.target.classList.remove('heart');
+            e.target.classList.add('heart_red');
+            this.props.inc(this.props.data.timestamp);
         } else {
             this.setState({
-                likes: this.state.likes - 1,
                 incrimented: false
             })
+            e.target.classList.remove('heart_red');
+            e.target.classList.add('heart');
+            this.props.dec(this.props.data.timestamp);
         }
-
-    }
-
+}
 
     render() {
         return (
@@ -41,11 +40,11 @@ class PostContainer extends React.Component {
                     </div>
                     <div className="post-com-cont">
                         <section className="post-icon-sec">
-                            <span className="icons"><FontAwesomeIcon icon={faHeart} onClick={this.incrimentLikes} size="2x"/></span>
-                            <span className="icons"><FontAwesomeIcon icon={faComment} size="2x"/></span>
+                            <div onClick={this.clicker} className="heart sm-ico mtop"/>
+                            <div className="commentico sm-ico mtop"/>
                         </section>
                         <section>
-                            <p>{this.state.likes} likes</p>
+                            <p>{this.props.data.likes} likes</p>
                         </section>
                         <div>
                             <CommentSection submitComment={this.props.submitComment} id={this.props.id} comments={this.props.data.comments} />

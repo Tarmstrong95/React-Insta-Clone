@@ -8,7 +8,8 @@ class PostsPage extends React.Component {
     super();
     this.state = {
       data: [],
-      filteredData: []
+      filteredData: [],
+      incrimented: false
     }
   }
 
@@ -16,6 +17,7 @@ class PostsPage extends React.Component {
     this.setState({ data: dummyData, filteredData: dummyData })
   }
 
+  //====== search =======
   search = (e) => {
     const newArr = this.state.filteredData.filter(item => {
       return item.username.includes(e.target.value)
@@ -25,6 +27,7 @@ class PostsPage extends React.Component {
     })
   }
 
+  //========= comments ========
   submitComment = (x, y) => {
     let index;
     let newObj = this.state.data.filter(item => item.timestamp === y)
@@ -32,6 +35,25 @@ class PostsPage extends React.Component {
     this.state.data.forEach((item, i) => {if (item.timestamp === y) return index = i})
     this.setState({[this.state.data[index]]: newObj[0]})
   }
+
+
+  //======== likes ===========
+  
+
+ inc = (timestamp) => {
+    let index;
+    let newObj = this.state.data.filter(item => item.timestamp === timestamp);
+    newObj[0].likes = newObj[0].likes + 1;
+    this.state.data.forEach((item, i) => {if (item.timestamp === timestamp) return index = i})
+    this.setState({[this.state.data[index]]: newObj[0]})
+ }
+ dec = (timestamp) => {
+  let index;
+  let newObj = this.state.data.filter(item => item.timestamp === timestamp);
+  newObj[0].likes = newObj[0].likes - 1;
+  this.state.data.forEach((item, i) => {if (item.timestamp === timestamp) return index = i})
+  this.setState({[this.state.data[index]]: newObj[0]})
+ }
 
   render() {
 
@@ -41,7 +63,7 @@ class PostsPage extends React.Component {
         <main className="main-cont">
           <section className="main-sec">
             {this.state.data.map((data, i) =>
-              <PostContainer submitComment={this.submitComment} key={data.timestamp} id={data.timestamp} data={data} />)}
+              <PostContainer inc={this.inc} dec={this.dec} submitComment={this.submitComment} key={data.timestamp} id={data.timestamp} data={data} />)}
           </section>
         </main>
       </section>

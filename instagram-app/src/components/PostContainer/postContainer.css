@@ -26,6 +26,9 @@
     top: -5px;
     left: -5px;
 }
+.post-icon-sec{
+    display: flex;
+}
 .post-username-cont{
     margin-left: 5px;
 }
@@ -44,7 +47,7 @@
 .form-cont{
     width: 100%;
     border-top: 1px solid rgba(0, 0, 0, 0.137);
-    padding: 10px 0;
+    padding: 20px 0;
 }
 .form-main{
 display: flex;
@@ -55,12 +58,33 @@ margin: 0;
     border: none;
     flex: 4;
     border-right: 1px solid rgba(0, 0, 0, 0.123);
-    padding-left: 16px
+    padding-left: 16px;
+    font-size: 1.2rem;
+}
+.form-main input:focus {
+    outline: none;
 }
 .form-main button{
     border: none;
+    font-size: 1.2rem;
     }
     
     .icons{
         margin: 10px;
+    }
+    .heart_red {
+        background-image: url(../../Icons/instagram-line-heart-fill.png)
+    }
+
+    .commentico{
+        background-image: url(../../Icons/instagram-line-comment.png);
+    }
+    .sm-ico{
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        margin-right: 20px;
+    }
+    .mtop{
+        margin-top: 10px;
     }
