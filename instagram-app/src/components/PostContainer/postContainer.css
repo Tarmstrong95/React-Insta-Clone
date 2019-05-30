@@ -1,0 +1,17 @@
+
+.heartlike{
+    background-image: url(../../Icons/instagram-line-heart.png);
+    
+}
+.icons{
+    margin: 10px;
+}
+.heart_red {
+    background-image: url(../../Icons/instagram-line-heart-fill.png)
+}
+.smIcon{
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    margin-right: 20px;  
+}
